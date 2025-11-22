@@ -1,0 +1,17 @@
+#include <string>
+#include <algorithm>
+
+bool isPalindrom(const std::string& word)
+{
+    std::string cleaned = word;
+
+    // convert to lowercase properly
+    std::transform(cleaned.begin(), cleaned.end(), cleaned.begin(), ::tolower);
+
+    // reverse the string
+    std::string reversed = cleaned;
+    std::reverse(reversed.begin(), reversed.end());
+
+    // compare
+    return cleaned == reversed;
+}

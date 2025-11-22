@@ -1,0 +1,18 @@
+#include <string>
+#include <algorithm>
+
+std::string reverse_words(std::string str)
+{
+    int start = 0;
+    int n = str.size();
+    //loop for each word 
+    for (int i = 0; i <= n; i++)
+    {
+        // When we find a space OR end of string → we found a word
+        if (i == n || str[i] == ' ')
+        {
+          //reverse the current word 
+            std::reverse(str.begin() + start, str.begin() + i);
+            start = i + 1; // move to start of next word
+        }
+    }
